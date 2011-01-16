@@ -32,10 +32,10 @@ in a HEAD section, somewhere after the installation code
 You can filter tables to which the script will apply by changing `$("table")` to `$("table.go-result")` or `$("#results")`.
 
 The `resultTable()` function can take following parametres:
-- `results` an array of strings how the results are presented
-- `results_classes` an array of classes which to corresponds to results - in similar order
-- `current_class` class assigned to selected player
-- `game_class` class assigned to selected game
+ - `results` an array of strings how the results are presented
+ - `results_classes` an array of classes which to corresponds to results - in similar order
+ - `current_class` class assigned to selected player
+ - `game_class` class assigned to selected game
 For example, running a script with default parametres:
 	$("table").resultTable({
 		results:			['+', 	'-', 	'='],
