@@ -36,6 +36,7 @@ The `resultTable()` function can take following parametres:
 * `results_classes` an array of classes which to corresponds to results - in similar order
 * `current_class` class assigned to selected player
 * `game_class` class assigned to selected game
+
 For example, running a script with default parametres:
 	$("table").resultTable({
 		results:			['+', 	'-', 	'='],
