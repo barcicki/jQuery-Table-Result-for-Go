@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title></title>
+	<style type="text/css">
+	    .current td {background-color: #d2d2d2;}
+	    .won td {background-color: yellowgreen}
+	    .won .game {background-color: darkgreen; color: white;}
+	    .lost td {background-color: salmon;}
+	    .lost .game {background-color: #900; color: white;}
+	    .jigo td {background-color: lightgray}
+	    .jigo .game {background-color: darkgray;}
+	</style>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+	<script type="text/javascript" src="jquery.resultTable.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("table").resultTable();
+		});
+	</script>
+    </head>
+    <body>
+	<table class="tournament-results">
+	    <tbody>
+		<tr>
+		    <th>Pl.</th>
+		    <th>Name</th>
+		    <th>Str</th>
+		    <th>Cl.</th>
+		    <th>MMS</th>
+		    <th>1</th>
+		    <th>2</th>
+		    <th>3</th>
+		    <th>4</th>
+		    <th>Pt</th>
+		    <th>SOS</th>
+		    <th>SODOS</th>
+		</tr>
+		<tr>
+		    <td>1</td>
+		    <td>Szychowiak Wojciech</td>
+		    <td>7k</td>
+		    <td>Bydg</td>
+		    <td>4</td>
+		    <td>4+</td>
+		    <td>3+</td>
+		    <td>2+</td>
+		    <td>5+</td>
+		    <td>4</td>
+		    <td>7</td>
+		    <td>7</td>
+		</tr>
+		<tr><td>2</td><td>Wierzbowski Lukasz</td><td>10k</td><td>Bydg</td><td>2</td><td>6+</td><td>4+</td><td>1-</td><td>3-</td><td>2</td><td>9</td><td>3</td></tr><tr><td>3</td><td>Walczak Piotr</td><td>8k</td><td>Bydg</td><td>2</td><td>5+</td><td>1-</td><td>6-</td><td>2+</td><td>2</td><td>8</td><td>3</td></tr><tr><td>4</td><td>Libront Dawid</td><td>8k</td><td>Bydg</td><td>2</td><td>1-</td><td>2-</td><td>5+</td><td>6+</td><td>2</td><td>8</td><td>2</td></tr><tr><td>5</td><td>Przech Ignacy</td><td>8k</td><td>Bydg</td><td>1</td><td>3-</td><td>6+</td><td>4-</td><td>1-</td><td>1</td><td>9</td><td>1</td></tr><tr><td>6</td><td>Chojnacki Piotr</td><td>10k</td><td>Bydg</td><td>1</td><td>2-</td><td>5-</td><td>3+</td><td>4-</td><td>1</td><td>7</td><td>2</td></tr></tbody></table>
+	
+<!--	Tabela #2-->
+	    <table class="simple results" align="center"> 
+
+	    <tbody> 
+	    <tr> 
+	    <th class="left">Pl</th> 
+	    <th class="middle"> Nazwisko</th> 
+	    <th class="middle"> Pkt.</th> 
+	    <th class="middle">R 1</th> 
+	    <th class="middle">R 2</th> 
+	    <th class="middle">R 3</th> 
+	    <th class="middle"><a title="Liczba zwyciestw (punktów)" href="http://go.art.pl/jak-czytac-tabelki-z-wynikami" target="_blank">NBW</a></th> 
+
+	    <th class="middle"><a title="Suma punktów przeciwników" href="http://go.art.pl/jak-czytac-tabelki-z-wynikami" target="_blank">SOS</a></th> 
+	    <th class="right"><a title="Suma SOSów przeciwników" href="http://go.art.pl/jak-czytac-tabelki-z-wynikami" target="_blank">SOSOS</a></th> 
+	    </tr> 
+	    <tr class="gr8 gr5 gr4" id="gr1"> 
+	    <td class="impair" align="right"><strong>1</strong></td> 
+	    <td class="impair"><strong>Piekarski Łukasz</strong></td> 
+	    <td class="impair" align="center">2½</td> 
+	    <td class="impair" align="center"><strong>8+/w0</strong></td> 
+	    <td class="impair" align="center"><strong>5+/b0</strong></td> 
+	    <td class="impair" align="center">4=/w0</td> 
+
+	    <td class="impair" align="center">2½</td> 
+	    <td class="impair" align="center">4</td> 
+	    <td class="impair" align="center">16</td> 
+	    </tr> 
+	    <tr id="gr2" class="gr4 gr3 gr10"> 
+	    <td class="pair" align="right"><strong>2</strong></td> 
+	    <td class="pair"><strong>Kadłubowski Mikołaj</strong></td> 
+	    <td class="pair" align="center">2</td> 
+	    <td class="pair" align="center">4=/b0</td> 
+	    <td class="pair" align="center">3=/w0</td> 
+
+	    <td class="pair" align="center"><strong>10+/b0</strong></td> 
+	    <td class="pair" align="center">2</td> 
+	    <td class="pair" align="center">4</td> 
+	    <td class="pair" align="center">15</td> 
+	    </tr> 
+	    <tr id="gr3" class="gr10 gr2 gr6"> 
+	    <td class="impair" align="right"><strong>3</strong></td> 
+	    <td class="impair"><strong>Kolasińska Alicja</strong></td> 
+	    <td class="impair" align="center">2</td> 
+	    <td class="impair" align="center"><strong>10+/w0</strong></td> 
+
+	    <td class="impair" align="center">2=/b0</td> 
+	    <td class="impair" align="center">6=/b0</td> 
+	    <td class="impair" align="center">2</td> 
+	    <td class="impair" align="center">4</td> 
+	    <td class="impair" align="center">14</td> 
+	    </tr> 
+	    <tr id="gr4" class="gr2 gr1 gr8"> 
+	    <td class="pair" align="right">4</td> 
+	    <td class="pair">Ereciński Jakub</td> 
+	    <td class="pair" align="center">1½</td> 
+
+	    <td class="pair" align="center">2=/w0</td> 
+	    <td class="pair" align="center">8=/b0</td> 
+	    <td class="pair" align="center">1=/b0</td> 
+	    <td class="pair" align="center">1½</td> 
+	    <td class="pair" align="center">5½</td> 
+	    <td class="pair" align="center">13</td> 
+	    </tr> 
+	    <tr id="gr5" class="gr1 gr7 gr6"> 
+	    <td class="impair" align="right">5</td> 
+	    <td class="impair">Jarmołowicz Jan</td> 
+
+	    <td class="impair" align="center">1½</td> 
+	    <td class="impair" align="center"><strong>6+/w0</strong></td> 
+	    <td class="impair" align="center">1-/w0</td> 
+	    <td class="impair" align="center">7=/b0</td> 
+	    <td class="impair" align="center">1½</td> 
+	    <td class="impair" align="center">5½</td> 
+	    <td class="impair" align="center">11½</td> 
+	    </tr> 
+	    <tr id="gr6" class="gr5 gr9 gr3"> 
+	    <td class="pair" align="right">6</td> 
+
+	    <td class="pair">Cygan Michał</td> 
+	    <td class="pair" align="center">1½</td> 
+	    <td class="pair" align="center">5-/b0</td> 
+	    <td class="pair" align="center"><strong>9+/b0</strong></td> 
+	    <td class="pair" align="center">3=/w0</td> 
+	    <td class="pair" align="center">1½</td> 
+	    <td class="pair" align="center">4½</td> 
+	    <td class="pair" align="center">13½</td> 
+	    </tr> 
+
+	    <tr id="gr7" class="gr9 gr10 gr5"> 
+	    <td class="impair" align="right">7</td> 
+	    <td class="impair">Borucka Karolina</td> 
+	    <td class="impair" align="center">1½</td> 
+	    <td class="impair" align="center">9=/w0</td> 
+	    <td class="impair" align="center">10=/b0</td> 
+	    <td class="impair" align="center">5=/w0</td> 
+	    <td class="impair" align="center">1½</td> 
+	    <td class="impair" align="center">3</td> 
+
+	    <td class="impair" align="center">15</td> 
+	    </tr> 
+	    <tr id="gr8" class="gr10 gr1 gr9"> 
+	    <td class="pair" align="right">8</td> 
+	    <td class="pair">Grabowski Paweł</td> 
+	    <td class="pair" align="center">1</td> 
+	    <td class="pair" align="center">1-/b0</td> 
+	    <td class="pair" align="center">4=/w0</td> 
+	    <td class="pair" align="center">9=/b0</td> 
+	    <td class="pair" align="center">1</td> 
+
+	    <td class="pair" align="center">5</td> 
+	    <td class="pair" align="center">13½</td> 
+	    </tr> 
+	    <tr id="gr9" class="gr7 gr6 gr8"> 
+	    <td class="impair" align="right">9</td> 
+	    <td class="impair">Bandyszek Michał</td> 
+	    <td class="impair" align="center">1</td> 
+	    <td class="impair" align="center">7=/b0</td> 
+	    <td class="impair" align="center">6-/w0</td> 
+	    <td class="impair" align="center">8=/w0</td> 
+
+	    <td class="impair" align="center">1</td> 
+	    <td class="impair" align="center">4</td> 
+	    <td class="impair" align="center">12½</td> 
+	    </tr> 
+	    <tr id="gr10" class="gr3 gr7 gr2"> 
+	    <td class="pair" align="right">10</td> 
+	    <td class="pair">Gola Piotr</td> 
+	    <td class="pair" align="center">0½</td> 
+	    <td class="pair" align="center">3-/b0</td> 
+	    <td class="pair" align="center">7=/w0</td> 
+
+	    <td class="pair" align="center">2-/w0</td> 
+	    <td class="pair" align="center">0½</td> 
+	    <td class="pair" align="center">5½</td> 
+	    <td class="pair" align="center">11</td> 
+	    </tr> 
+	    </tbody> 
+	    </table> 
+
+    </body>
+</html>
