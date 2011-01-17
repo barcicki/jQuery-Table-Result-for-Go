@@ -3,7 +3,7 @@ jQuery Table Result for Go
 
 Description
 ---------------------------------------
-This script was created to ease viewing table of results for Go (baduk) tournaments. When mouse is over any row in a table, other rows are highlighted of those players who played against the selected one. Opponents who won and lost are marked differently.
+This script was created to help reading table of results for Go (baduk) tournaments. When mouse is over any row in a table, other rows are highlighted of those players who played against the selected one. Opponents who won and lost are marked differently.
 
 Compatibility
 ------------------------------
