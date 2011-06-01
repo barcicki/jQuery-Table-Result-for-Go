@@ -3,7 +3,13 @@ jQuery Table Result for Go
 
 Description
 ---------------------------------------
-This script was created to help reading table of results for Go (baduk) tournaments. When mouse is over any row in a table, other rows are highlighted of those players who played against the selected one. Opponents who won and lost are marked differently.
+This script was created to help reading table of results for Go (baduk) tournaments. 
+When mouse is over any row in a table, other rows are highlighted of those players 
+who played against the selected one. Opponents who won and lost are marked differently.
+
+New:
+Optionally user is allowed to click rows which results in hiding unrelevant information
+(shows only players that target player played with).
 
 Compatibility
 ------------------------------
@@ -37,13 +43,17 @@ The `resultTable()` function can take following parametres:
 * `results_classes` an array of classes which to corresponds to results - in similar order
 * `current_class` class assigned to selected player
 * `game_class` class assigned to selected game
+* `clickable` if true user can click rows which will result in showing only opponents
+* `applyCursor` if true pointer would appear when hovering rows (can be achieved by css)
 
 For example, running a script with default parametres:
 	$("table").resultTable({
 		results:			['+', 	'-', 	'='],
 		results_classes: 	['won',	'lost', 'jigo'],
 		current_class:		'current',
-		game_class:			'game'
+		game_class:			'game',
+		clickable:			true,
+		applyCursor:		true
 	});
 	
 Requesting a Change

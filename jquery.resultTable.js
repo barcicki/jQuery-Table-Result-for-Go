@@ -3,11 +3,13 @@ $.fn.resultTable = function(settings) {
 		results: ['+', '-', '='],
 		results_classes: ['won', 'lost', 'jigo'],
 		current_class: 'current',
-		game_class: 'game'
+		game_class: 'game',
+		clickable: true,
+		applyCursor: true
     };
 
     var s = $.extend(default_settings, settings);
-
+	
     // in case of more tables then 1
     $(this).each(function() {
 		
@@ -26,7 +28,7 @@ $.fn.resultTable = function(settings) {
 			// of starting parsing the row
 			var player = parseInt(tr.find("td:first").text());
 
-			if (!isNaN(player)) {
+			if (!isNaN(player) || place != undefined) {
 
 				// place is undefined till approaching the first player to parse
 				if (place == undefined) {
@@ -39,6 +41,11 @@ $.fn.resultTable = function(settings) {
 				}
 
 				tr.addClass("player" + place);
+				
+				if (s.applyCursor) {
+					tr.css("cursor", "pointer");
+				}
+				
 				$.each(s.results, function(index, result) {
 					tr.find("td:contains("+result+")").each(function() {
 					var played = parseInt($(this).text());
@@ -49,18 +56,59 @@ $.fn.resultTable = function(settings) {
 
 			}
 		})
-
-		table.find("tr").hover(function() {
-			var tr = $(this).addClass(s.current_class);
+	
+		//main functions
+		
+		// Adds classes to opponents
+		var hoverPlayers = function($row) {
+			var tr = $row.addClass(s.current_class);
 			$.each(tr.attr("class").split(" "), function(index, value) {
 			   if (value.match(/played/)) {
-			   var info = value.split("-");
-			   table.find("tr.player" + info[1]).addClass(info[2]);
+				   var info = value.split("-");
+				   table.find("tr.player" + info[1]).addClass(info[2]);
 			   } 
 			});
-		}, function() {
+		}
+		
+		// removes added classes
+		var dehoverPlayers = function() {
 			table.find("tr").removeClass("current " + s.results_classes.join(" ") );
-		})
+		}
+
+		var hoverable = true;
+
+		// handlers
+		table.find("tr").hover(function() {
+			if (hoverable) {
+				hoverPlayers($(this));
+			}
+		}, function() {
+			if (hoverable) {
+				dehoverPlayers();
+			}
+		}).toggle(function() {
+			if (s.clickable) {
+				dehoverPlayers();
+				table.find("tr[class*=player]").show();
+				var currentPlayer = $(this).attr("class").match(/player([0-9]{1,})/);
+				if (currentPlayer) {				
+					var thisPlayer = table.find("tr."+currentPlayer[0]);
+					
+					table.find("tr[class*=player]:not(tr[class*=played-" + currentPlayer[1] + "-])").not(thisPlayer).hide();
+					hoverable = false;
+					hoverPlayers(thisPlayer);
+				}
+			}
+			return false;
+		}, function() {
+			if (s.clickable) {
+				table.find("tr[class*=player]").show();
+				dehoverPlayers();
+				hoverable = true;
+				hoverPlayers($(this));
+			}
+			return false;
+		});
 
 		table.find("td[class*=game]").hover(function() {
 			$.each($(this).attr("class").split(" "), function(index, value) {
